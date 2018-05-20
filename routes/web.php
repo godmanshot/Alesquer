@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('person', 'PersonController');
+Route::resource('course', 'CourseController');
+Route::resource('record', 'RecordController');
+Route::resource('teacher', 'TeacherController');
+Route::resource('application', 'ApplicationController');
