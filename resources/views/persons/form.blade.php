@@ -19,7 +19,7 @@
         </div>
         <div class="form-group col-md-6">
             <label for="last_name">Имя</label>
-            <input type="password" class="form-control" id="last_name" name="last_name" placeholder="Имя" value="{{isset($model) ? $model->last_name : ''}}" required>
+            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Имя" value="{{isset($model) ? $model->last_name : ''}}" required>
         </div>
     </div>
     <div class="form-group">

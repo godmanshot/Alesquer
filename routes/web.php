@@ -11,16 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::resource('person', 'PersonController');
-Route::resource('course', 'CourseController');
-Route::resource('record', 'RecordController');
-Route::resource('teacher', 'TeacherController');
-Route::resource('application', 'ApplicationController');
+Route::resource('person', 'PersonController')->middleware('auth');
+Route::resource('course', 'CourseController')->middleware('auth');
+Route::resource('record', 'RecordController')->middleware('auth');
+Route::resource('teacher', 'TeacherController')->middleware('auth');
+Route::resource('application', 'ApplicationController')->middleware('auth');
+Route::get('/app/record/{record}', 'ApplicationController@record')->name('application.record')->middleware('auth');

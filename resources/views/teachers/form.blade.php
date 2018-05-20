@@ -40,6 +40,10 @@
         <label for="work_time">Рабочее время</label>
         <input type="text" class="form-control" id="work_time" name="work_time" placeholder="Рабочее время" value="{{isset($model) ? $model->work_time : ''}}" required>
     </div>
+    <div class="form-group">
+        <label for="user_id">ID пользователя</label>
+        <input type="number" class="form-control" id="user_id" name="user_id" placeholder="ID пользователя" value="{{isset($model) ? $model->user_id : ''}}" required>
+    </div>
 
     <button type="submit" class="btn btn-primary">Сохранить</button>
     <a href="{{url()->previous()}}" class="btn btn-primary">Отмена</a>
